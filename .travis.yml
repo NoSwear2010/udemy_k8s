@@ -6,4 +6,4 @@ before_install:
   - docker build -t udemy_k8s -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true udemy_k8s npm runt test -- --coverage
+  - docker run -e CI=true udemy_k8s npm run test -- --coverage
