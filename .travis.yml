@@ -1,0 +1,9 @@
+sudo: reuired
+services:
+  - docker
+
+before_install:
+  - docker build -t udemy_k8s -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true udemy_k8s npm runt test -- --coverage
